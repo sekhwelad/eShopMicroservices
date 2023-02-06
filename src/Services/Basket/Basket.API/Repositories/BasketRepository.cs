@@ -1,8 +1,8 @@
 ﻿using Basket.API.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 using System;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Basket.API.Repositories
@@ -25,7 +25,7 @@ namespace Basket.API.Repositories
             return JsonConvert.DeserializeObject<ShoppingCart>(basket);
         }
 
-        public async Task<ShoppingCart> UpdateBasket(ShoppingCart basket)
+        public async Task<ShoppingCart> UpdateBasket([FromBody] ShoppingCart basket)
         {
             await _redisCache.SetStringAsync(basket.UserName, JsonConvert.SerializeObject(basket));
 
