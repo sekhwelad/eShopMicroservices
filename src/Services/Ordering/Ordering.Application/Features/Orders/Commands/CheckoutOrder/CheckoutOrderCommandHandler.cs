@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.CheckoutOrder
+namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 {
     public class CheckoutOrderCommandHandler : IRequestHandler<CheckoutOrderCommand, int>
     {
@@ -32,8 +32,8 @@ namespace Ordering.Application.Features.Commands.CheckoutOrder
         public async Task<int> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
         {
             var orderEntity = _mapper.Map<Order>(request);
-            var newOrder= await _orderRepository.AddAsync(orderEntity);
-            _logger.LogInformation($"Order {newOrder.Id} issuccessfully created.");
+            var newOrder = await _orderRepository.AddAsync(orderEntity);
+            _logger.LogInformation($"Order {newOrder.Id} is successfully created.");
 
             await SendMail(newOrder);
 

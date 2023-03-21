@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.UpdateOrder
+namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
 {
-    public class UpdateOrderCommandValidator :AbstractValidator<UpdateOrderCommand>
+    public class UpdateOrderCommandValidator : AbstractValidator<UpdateOrderCommand>
     {
         public UpdateOrderCommandValidator()
         {

@@ -8,7 +8,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.UpdateOrder
+namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
 {
     public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
     {
