@@ -14,9 +14,6 @@ namespace AspnetRunBasics
     {
         public static void Main(string[] args)
         {
-            //var host = CreateHostBuilder(args).Build();
-            //SeedDatabase(host);
-            //host.Run();
             CreateHostBuilder(args).Build().Run();
         }
 
