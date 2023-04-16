@@ -1,3 +1,4 @@
+using Common.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,21 +20,22 @@ namespace Shopping.Aggregator
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddTransient<LoggingDelegatingHandler>();
             services.AddHttpClient<ICatalogService, CatalogService>(client =>
-                client.BaseAddress = new Uri(Configuration["ApiSettings:CatalogUrl"]));
-    
+                client.BaseAddress = new Uri(Configuration["ApiSettings:CatalogUrl"]))
+               .AddHttpMessageHandler<LoggingDelegatingHandler>();
 
             services.AddHttpClient<IBasketService, BasketService>(client =>
-                client.BaseAddress = new Uri(Configuration["ApiSettings:BasketUrl"]));
+                client.BaseAddress = new Uri(Configuration["ApiSettings:BasketUrl"]))
+                .AddHttpMessageHandler<LoggingDelegatingHandler>();
 
             services.AddHttpClient<IOrderService, OrderService>(client =>
-                client.BaseAddress = new Uri(Configuration["ApiSettings:OrderingUrl"]));
+                client.BaseAddress = new Uri(Configuration["ApiSettings:OrderingUrl"]))
+                .AddHttpMessageHandler<LoggingDelegatingHandler>();
 
-           
+
 
 
             services.AddControllers();
@@ -42,8 +44,6 @@ namespace Shopping.Aggregator
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shopping.Aggregator", Version = "v1" });
             });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
