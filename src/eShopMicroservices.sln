@@ -45,7 +45,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{2591
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetRunBasics", "WebApps\AspnetRunBasics\AspnetRunBasics.csproj", "{6CABBC94-F9C7-410F-A27B-E88D2B62A70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "BuildingBlocks\Common.Logging\Common.Logging.csproj", "{1874E83D-CA0E-485A-9E8D-AA073E6A517D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "BuildingBlocks\Common.Logging\Common.Logging.csproj", "{1874E83D-CA0E-485A-9E8D-AA073E6A517D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStatus", "WebApps\WebStatus\WebStatus.csproj", "{EBADE78C-F085-42C6-AAB8-891129E8B527}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{1874E83D-CA0E-485A-9E8D-AA073E6A517D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1874E83D-CA0E-485A-9E8D-AA073E6A517D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1874E83D-CA0E-485A-9E8D-AA073E6A517D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBADE78C-F085-42C6-AAB8-891129E8B527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBADE78C-F085-42C6-AAB8-891129E8B527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBADE78C-F085-42C6-AAB8-891129E8B527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBADE78C-F085-42C6-AAB8-891129E8B527}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{4401A719-BBF8-401C-BD03-3C1F6F17094F} = {9807C140-DC27-4C99-BA27-BEA1D799AE0A}
 		{6CABBC94-F9C7-410F-A27B-E88D2B62A70F} = {25913D4D-480B-4780-88E3-9CFF6A079751}
 		{1874E83D-CA0E-485A-9E8D-AA073E6A517D} = {7CD07118-E06C-49F2-9E4C-986E7D01B8D7}
+		{EBADE78C-F085-42C6-AAB8-891129E8B527} = {25913D4D-480B-4780-88E3-9CFF6A079751}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B3DBE11-615E-4E12-B0DA-30E552294FC1}
